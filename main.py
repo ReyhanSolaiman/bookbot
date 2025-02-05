@@ -12,4 +12,17 @@ def main():
 
     print(count)
 
+    counted_chars = count_each_character(file_contents)
+    print(counted_chars)
+
+def count_each_character(file_contents):
+    character_count = {}
+    for char in file_contents:
+        low_char = char.lower()
+        if low_char in character_count:
+            character_count[low_char] += 1
+        else:
+            character_count[low_char] = 1
+    return character_count
+
 main()
